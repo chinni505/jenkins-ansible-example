@@ -5,3 +5,5 @@ If you configured Jenkin job with Nexus repository and plugin and also using SSH
 as a down stream project. 
 
 You can use this example.
+
+Here we are doing tomcat deployment and restart tomcat service.
