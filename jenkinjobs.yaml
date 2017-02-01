@@ -1,0 +1,21 @@
+---
+- hosts: tomcat
+  become: yes
+  vars_files:
+  - vars.yaml
+
+  tasks:
+  - name: war deployment
+    get_url:
+      url: "{{ nexus_url }}/{{ release_version }}/{{ package_name }}"
+      dest: "{{ tomcat_deploy }}"
+      mode: 0755
+
+  - name: restart tomcat instance
+    service: name=tomcat state=restarted
+
+
+
+     
+    
+
